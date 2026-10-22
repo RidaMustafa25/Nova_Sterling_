@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Merino Wool Throw Blanket - sample image 1">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(35 .5 .5)">
+<stop offset="0" stop-color="#9f1239"/>
+<stop offset="1" stop-color="#e11d48"/>
+</linearGradient>
+</defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<circle cx="640" cy="150" r="190" fill="#ffffff" opacity=".07"/>
+<circle cx="160" cy="650" r="130" fill="#ffffff" opacity=".06"/>
+<ellipse cx="400" cy="655" rx="175" ry="16" fill="#000000" opacity=".2"/>
+<g transform="translate(400 400) rotate(0) scale(1.0) translate(-400 -400)">
+<rect x="230" y="285" width="340" height="250" rx="22" fill="#ffffff" opacity=".93"/>
+<rect x="230" y="350" width="340" height="28" fill="#e3b341"/>
+<rect x="230" y="400" width="340" height="14" fill="#e3b341" opacity=".6"/>
+<rect x="230" y="440" width="340" height="28" fill="#e3b341" opacity=".85"/>
+<path d="M248 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M267 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M286 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M305 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M324 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M343 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M362 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M381 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M400 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M419 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M438 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M457 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M476 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M495 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M514 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M533 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/><path d="M552 535 v32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+</g>
+<text x="400" y="742" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="4" fill="#ffffff" opacity=".65">SAMPLE IMAGE 1 / 2</text>
+</svg>

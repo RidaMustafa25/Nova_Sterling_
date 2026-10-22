@@ -1,0 +1,12 @@
+{
+  "id": "compact-bluetooth-speaker",
+  "title": "Compact Bluetooth Speaker",
+  "price": 45.0,
+  "description": "A pocket-friendly wireless speaker with clear, room-filling sound.\n\n- Bluetooth wireless connection\n- Portable and easy to carry\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/compact-bluetooth-speaker-1.svg",
+    "/uploads/compact-bluetooth-speaker-2.svg",
+    "/uploads/compact-bluetooth-speaker-3.svg"
+  ],
+  "featured": false
+}

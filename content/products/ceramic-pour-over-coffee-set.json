@@ -1,0 +1,12 @@
+{
+  "id": "ceramic-pour-over-coffee-set",
+  "title": "Ceramic Pour-Over Coffee Set",
+  "price": 58.5,
+  "description": "A ceramic dripper and glass carafe set for a slow, flavourful morning brew.\n\n- Dripper and carafe included\n- Easy to rinse and reuse\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/ceramic-pour-over-coffee-set-1.svg",
+    "/uploads/ceramic-pour-over-coffee-set-2.svg",
+    "/uploads/ceramic-pour-over-coffee-set-3.svg"
+  ],
+  "featured": true
+}

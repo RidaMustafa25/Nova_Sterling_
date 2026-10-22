@@ -1,0 +1,14 @@
+{
+  "id": "sterling-steel-insulated-bottle",
+  "title": "Sterling Steel Insulated Bottle",
+  "price": 34.0,
+  "description": "A double-wall stainless steel bottle built for everyday carry.\n\n- Insulated construction helps drinks stay cold or hot\n- Leak-resistant screw cap\n- Slim profile fits most cup holders and bag pockets\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/sterling-steel-insulated-bottle-1.svg",
+    "/uploads/sterling-steel-insulated-bottle-2.svg",
+    "/uploads/sterling-steel-insulated-bottle-3.svg",
+    "/uploads/sterling-steel-insulated-bottle-4.svg",
+    "/uploads/sterling-steel-insulated-bottle-5.svg"
+  ],
+  "featured": true
+}

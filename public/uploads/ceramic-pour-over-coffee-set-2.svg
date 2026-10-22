@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Ceramic Pour-Over Coffee Set - sample image 2">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(60 .5 .5)">
+<stop offset="0" stop-color="#44403c"/>
+<stop offset="1" stop-color="#78716c"/>
+</linearGradient>
+</defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<circle cx="160" cy="180" r="190" fill="#ffffff" opacity=".07"/>
+<circle cx="640" cy="620" r="130" fill="#ffffff" opacity=".06"/>
+<ellipse cx="400" cy="655" rx="175" ry="16" fill="#000000" opacity=".2"/>
+<g transform="translate(400 400) rotate(-7) scale(0.92) translate(-400 -400)">
+<path d="M295 365 H505 L470 465 H330 Z" fill="#ffffff" opacity=".93"/>
+<rect x="318" y="465" width="164" height="14" rx="7" fill="#e3b341"/>
+<path d="M332 479 H468 V565 Q468 615 418 615 H382 Q332 615 332 565 Z" fill="#ffffff" opacity=".85"/>
+<path d="M372 325 q28 -32 0 -62 M428 325 q28 -32 0 -62" stroke="#e3b341" stroke-width="10" stroke-linecap="round" fill="none"/>
+</g>
+<text x="400" y="742" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="4" fill="#ffffff" opacity=".65">SAMPLE IMAGE 2 / 3</text>
+</svg>

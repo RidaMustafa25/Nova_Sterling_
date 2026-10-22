@@ -1,0 +1,371 @@
+/* Styles for sterling-gate-kinetic-navigation.tsx. GSAP animates transforms/opacity;
+   these rules set the layout and the closed (hidden) starting state.
+   Design tokens (--color-*, --ink*, --paper, --line, --accent, --cubic-default) are in globals.css. */
+
+/* ── Floating pill bar ───────────────────────────────────────── */
+
+.site-header-wrapper {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: 12px 16px 0;
+  pointer-events: none;
+  transition: transform 0.55s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.site-header-wrapper[data-hidden="true"] {
+  transform: translateY(calc(-100% - 12px));
+}
+
+/* A compact pill centred at the top of the page, sized to its contents. */
+.header {
+  pointer-events: auto;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 12px 32px -16px rgba(17, 17, 17, 0.18);
+  transition: background-color 0.4s var(--cubic-default), box-shadow 0.4s var(--cubic-default),
+    border-color 0.4s var(--cubic-default);
+}
+
+.site-header-wrapper[data-scrolled="true"] .header {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.05), 0 16px 40px -18px rgba(17, 17, 17, 0.28);
+}
+
+/* While the menu is open the pill lifts above the panel and stays readable. */
+.site-header-wrapper[data-open="true"] .header {
+  background: var(--paper);
+}
+
+.header .container.is--full {
+  width: 100%;
+  max-width: none;
+  padding: 0 6px 0 20px;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+}
+
+.nav-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 1.4em;
+  height: 1.4em;
+  color: var(--accent);
+}
+
+/* Inline links with a highlight pill that follows the pointer */
+.nav-inline {
+  display: none;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-inline {
+    display: flex;
+  }
+}
+
+.nav-inline-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.25s var(--cubic-default);
+}
+
+.nav-inline-link:hover,
+.nav-inline-link[data-active="true"] {
+  color: var(--ink);
+}
+
+.nav-inline-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--well);
+}
+
+.nav-row__right {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  transition: opacity 0.3s var(--cubic-default);
+}
+
+.site-header-wrapper[data-open="true"] .nav-actions {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label .toggle-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.nav-close-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  height: 44px;
+  margin-left: 2px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s var(--cubic-default), transform 0.3s var(--cubic-default);
+}
+
+.nav-close-btn:hover {
+  background: #2a2a2a;
+}
+
+.nav-close-btn:active {
+  transform: scale(0.97);
+}
+
+.nav-close-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Two stacked labels; GSAP slides them up by 100% to swap "Menu" for "Close". */
+.menu-button-text {
+  font-size: 0.875rem;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.p-large {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+.icon-wrap {
+  display: flex;
+  width: 0.85em;
+  height: 0.85em;
+}
+
+.menu-button-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Fullscreen menu ─────────────────────────────────────────── */
+
+.fullscreen-menu-container {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+
+.nav-overlay-wrapper {
+  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.menu-content {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  width: min(36em, calc(100% - 16px));
+  padding: 7em 2.5em var(--section-padding);
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.menu-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.backdrop-layer {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+}
+
+.backdrop-layer.first {
+  background: var(--accent);
+}
+
+.backdrop-layer.second {
+  background: var(--well);
+}
+
+.ambient-background-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s var(--cubic-default);
+}
+
+.bg-shape.active {
+  opacity: 1;
+}
+
+.shape-element {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Re-tint the hover shapes to the store palette (CSS overrides SVG presentation colours). */
+.bg-shape-1 .shape-element,
+.bg-shape-3 .shape-element,
+.bg-shape-4 .shape-element {
+  fill: rgba(31, 92, 74, 0.07);
+}
+.bg-shape-1 .shape-element:nth-child(even),
+.bg-shape-3 .shape-element:nth-child(3n),
+.bg-shape-4 .shape-element:nth-child(even) {
+  fill: rgba(17, 17, 17, 0.04);
+}
+.bg-shape-2 .shape-element,
+.bg-shape-5 .shape-element {
+  stroke: rgba(31, 92, 74, 0.08);
+}
+
+.menu-content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.menu-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Clips each link so it can rise into view from below. */
+.menu-list-item {
+  overflow: hidden;
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  padding: 0.12em 0.3em;
+  border-radius: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-link-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  transition: transform 0.5s var(--cubic-default), color 0.3s var(--cubic-default);
+}
+
+.nav-link-hover-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--well);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--cubic-default);
+}
+
+.nav-link:hover .nav-link-text,
+.nav-link:focus-visible .nav-link-text {
+  transform: translateX(0.3em);
+  color: var(--accent);
+}
+
+.nav-link:hover .nav-link-hover-bg,
+.nav-link:focus-visible .nav-link-hover-bg {
+  transform: scaleY(1);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .header .container.is--full {
+    padding: 0 8px 0 18px;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .menu-content {
+    padding: 6.5em 1.5em 3em;
+  }
+}

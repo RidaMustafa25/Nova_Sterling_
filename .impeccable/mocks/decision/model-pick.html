@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lot Catalogue sketch</title>
+<style>
+  :root { --cobalt:#1d2f6f; --plate:#fbfaf7; --ink:#141414; --red:#b3261e; }
+  * { box-sizing:border-box; margin:0; }
+  body { width:1440px; height:900px; overflow:hidden; background:var(--cobalt); color:var(--plate); font-family: Georgia, serif; }
+  .bar { height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 48px; border-bottom:1px solid rgba(251,250,247,.25); font-family: Arial, sans-serif; }
+  .logo { letter-spacing:.3em; font-size:14px; font-weight:700; }
+  .menu { border:1px solid var(--plate); padding:9px 20px; border-radius:999px; font-size:14px; }
+  .cover { display:grid; grid-template-columns: 1fr 1fr; height:836px; }
+  .left { padding:96px 72px; display:flex; flex-direction:column; justify-content:space-between; }
+  .sale { font-family: Arial, sans-serif; letter-spacing:.35em; font-size:13px; }
+  h1 { font-size:96px; line-height:.95; font-weight:400; }
+  .lot { font-family: Arial, sans-serif; font-size:15px; letter-spacing:.1em; }
+  .right { background:var(--plate); color:var(--ink); padding:56px; display:flex; flex-direction:column; }
+  .photo { flex:1; background:#d9d6cf; }
+  .cap { display:flex; justify-content:space-between; align-items:end; padding-top:24px; font-family: Arial, sans-serif; }
+  .lotnum { font-size:64px; font-family: Georgia, serif; }
+  .btn { background:var(--red); color:#fff; padding:16px 28px; font-size:15px; }
+</style>
+</head>
+<body>
+  <div class="bar"><div class="logo">NOVA STERLING</div><div class="menu">Menu +</div></div>
+  <div class="cover">
+    <div class="left">
+      <div class="sale">THE COLLECTION · AUTUMN</div>
+      <h1>Crafted<br>to last.</h1>
+      <div class="lot">8 LOTS · SCROLL TO OPEN LOT 1</div>
+    </div>
+    <div class="right">
+      <div class="photo"></div>
+      <div class="cap"><div><div class="lotnum">1</div><div>Pulse Fitness Watch</div></div><div class="btn">Add to cart</div></div>
+    </div>
+  </div>
+</body>
+</html>

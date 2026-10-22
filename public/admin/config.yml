@@ -1,0 +1,64 @@
+# Decap CMS configuration for NOVA STERLING LTD
+# Admin UI: /admin   (embedded by src/app/admin/page.tsx)
+#
+# IMPORTANT (Vercel): "git-gateway" is provided by Netlify Identity + Git Gateway.
+# It only works when a Netlify site with Identity/Git Gateway enabled backs this login.
+# If you host on Vercel only, replace the backend block below with the GitHub backend
+# (needs a small OAuth proxy) - see README.md, section "Decap CMS on Vercel".
+#
+# Fallback for trying the UI without any login: open /admin?backend=test
+# (uses /admin/config.test.yml with the in-memory "test-repo" backend; nothing is saved).
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Local editing: run `npm run cms` (decap-server) in a second terminal, then open
+# http://localhost:3000/admin - changes are written straight to your working copy.
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://novasterlingltd.vercel.app
+display_url: https://novasterlingltd.vercel.app
+
+collections:
+  - name: products
+    label: Products
+    label_singular: Product
+    description: "Add, edit or delete products. Each product is one JSON file in content/products."
+    folder: content/products
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} - {{price}}"
+    sortable_fields: ["title", "price", "featured"]
+    editor:
+      preview: false
+    fields:
+      - label: "ID / Slug"
+        name: id
+        widget: string
+        required: false
+        hint: "Optional. Lowercase URL slug (e.g. steel-bottle). Leave empty to use the file name."
+      - { label: Title, name: title, widget: string }
+      - label: Price
+        name: price
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+        hint: "Numbers only, no currency symbol."
+      - { label: Description, name: description, widget: markdown }
+      - { label: Featured, name: featured, widget: boolean, default: false, hint: "Show on the homepage Featured Products grid." }
+      - label: Images
+        name: images
+        widget: list
+        min: 1
+        max: 5
+        hint: "Upload or choose 1 to 5 images. The first image is the main/cover image."
+        field: { label: Image, name: image, widget: image }

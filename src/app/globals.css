@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* shadcn-style tokens (HSL channels) used by src/components/ui */
+  --background: 40 20% 98%;
+  --foreground: 0 0% 7%;
+  --muted: 40 9% 94%;
+  --muted-foreground: 0 0% 36%;
+  --border: 40 9% 89%;
+
+  /* Store palette (mirrors theme.extend.colors in tailwind.config.ts) */
+  --canvas: #fafaf8;
+  --paper: #ffffff;
+  --well: #f2f1ee;
+  --line: #e6e4e0;
+  --ink: #111111;
+  --ink-soft: #5c5c5c;
+  --ink-mute: #737373;
+  --accent: #1f5c4a;
+  --accent-soft: #e3ede8;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  /* sterling-gate-kinetic-navigation, mapped onto the store palette */
+  --color-primary: var(--accent);
+  --color-dark: var(--ink);
+  --color-neutral-100: var(--paper);
+  --color-neutral-200: var(--line);
+  --color-neutral-300: var(--ink-mute);
+  --color-neutral-800: var(--ink-soft);
+  --size-container: 1400px;
+  --container-padding: 2em;
+  --section-padding: 4em;
+  --gap: 1.5em;
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: #cfccc6 var(--canvas);
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    caret-color: var(--accent);
+  }
+
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+}
+
+@layer components {
+  .display {
+    @apply font-display font-semibold;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  /* Small uppercase label for data, never above a heading. */
+  .label {
+    @apply text-xs font-medium uppercase text-ink-soft;
+    letter-spacing: 0.14em;
+  }
+
+  .price {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Pill buttons. The arrow inside nudges on hover. */
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold;
+    transition: background-color 0.35s var(--ease-out), color 0.35s var(--ease-out), border-color 0.35s var(--ease-out),
+      transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+  }
+  .btn-primary {
+    @apply bg-ink text-paper;
+  }
+  .btn-primary:hover {
+    background: #2a2a2a;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px -12px rgba(17, 17, 17, 0.45);
+  }
+  .btn-secondary {
+    @apply border border-line bg-paper text-ink;
+  }
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    @apply text-ink;
+  }
+  .btn-ghost:hover {
+    background: var(--well);
+  }
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+  }
+  .btn-primary:disabled,
+  .btn-secondary:disabled {
+    @apply cursor-not-allowed opacity-40;
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-primary svg:last-child:not(:first-child),
+  .btn-secondary svg:last-child:not(:first-child) {
+    transition: transform 0.35s var(--ease-out);
+  }
+  .btn-primary:hover svg:last-child:not(:first-child),
+  .btn-secondary:hover svg:last-child:not(:first-child) {
+    transform: translateX(3px);
+  }
+
+  /* Text link with an underline that draws in from the left. */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out), color 0.3s var(--ease-out);
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink-mute;
+    transition: border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  }
+  .field:hover {
+    border-color: #cfccc6;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--ink);
+    box-shadow: 0 0 0 4px rgba(17, 17, 17, 0.06);
+  }
+  .field[aria-invalid="true"] {
+    border-color: #b42318;
+  }
+
+  .alert-error {
+    @apply flex items-start gap-2.5 rounded-xl bg-danger-soft px-4 py-3 text-sm text-danger;
+  }
+
+  /* Policy and markdown text */
+  .prose-store {
+    --tw-prose-body: var(--ink-soft);
+    --tw-prose-headings: var(--ink);
+    --tw-prose-links: var(--ink);
+    --tw-prose-bold: var(--ink);
+    --tw-prose-bullets: #b8b5ae;
+    --tw-prose-counters: var(--ink-soft);
+    --tw-prose-hr: var(--line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

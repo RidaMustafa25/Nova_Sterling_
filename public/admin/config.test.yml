@@ -1,0 +1,53 @@
+# Decap CMS "test-repo" fallback configuration.
+# Open /admin?backend=test to use it. The test-repo backend keeps changes in browser
+# memory only (nothing is committed), which is handy for trying the editor UI or when
+# git-gateway is not available yet. Keep the collection definition in sync with config.yml.
+
+backend:
+  name: test-repo
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://novasterlingltd.vercel.app
+display_url: https://novasterlingltd.vercel.app
+
+collections:
+  - name: products
+    label: Products
+    label_singular: Product
+    description: "TEST MODE - changes are not saved. Each product is one JSON file in content/products."
+    folder: content/products
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} - {{price}}"
+    sortable_fields: ["title", "price", "featured"]
+    editor:
+      preview: false
+    fields:
+      - label: "ID / Slug"
+        name: id
+        widget: string
+        required: false
+        hint: "Optional. Lowercase URL slug (e.g. steel-bottle). Leave empty to use the file name."
+      - { label: Title, name: title, widget: string }
+      - label: Price
+        name: price
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+        hint: "Numbers only, no currency symbol."
+      - { label: Description, name: description, widget: markdown }
+      - { label: Featured, name: featured, widget: boolean, default: false, hint: "Show on the homepage Featured Products grid." }
+      - label: Images
+        name: images
+        widget: list
+        min: 1
+        max: 5
+        hint: "Upload or choose 1 to 5 images. The first image is the main/cover image."
+        field: { label: Image, name: image, widget: image }

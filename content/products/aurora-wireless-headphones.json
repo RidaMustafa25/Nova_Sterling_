@@ -1,0 +1,13 @@
+{
+  "id": "aurora-wireless-headphones",
+  "title": "Aurora Wireless Headphones",
+  "price": 129.0,
+  "description": "Over-ear wireless headphones with a comfortable fit for long listening sessions.\n\n- Bluetooth wireless connection\n- Soft cushioned ear cups\n- Foldable design with a carry pouch\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/aurora-wireless-headphones-1.svg",
+    "/uploads/aurora-wireless-headphones-2.svg",
+    "/uploads/aurora-wireless-headphones-3.svg",
+    "/uploads/aurora-wireless-headphones-4.svg"
+  ],
+  "featured": true
+}

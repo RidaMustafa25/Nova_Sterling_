@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tannery Colour Card sketch</title>
+<style>
+  :root { --oxblood:#5a1a1f; --saddle:#a8582a; --bridle:#1c1411; --vegtan:#d6a46a; --thread:#ece0c8; }
+  * { box-sizing:border-box; margin:0; }
+  body { width:1440px; height:900px; overflow:hidden; background:var(--oxblood); color:var(--thread); font-family: "Helvetica Neue", Arial, sans-serif; position:relative; }
+  .bar { height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 40px; border-bottom:2px dashed rgba(236,224,200,.35); }
+  .logo { font-weight:700; letter-spacing:.32em; font-size:15px; }
+  .menu { background:var(--bridle); padding:10px 22px; border-radius:999px; font-size:15px; }
+  .swatch { position:absolute; width:210px; height:262px; border-radius:6px; outline:2px dashed rgba(236,224,200,.55); outline-offset:-10px; }
+  .tab { position:absolute; top:-22px; left:18px; width:64px; height:24px; border-radius:6px 6px 0 0; }
+  .num { position:absolute; bottom:18px; left:22px; font-size:12px; letter-spacing:.2em; }
+  .center { position:absolute; inset:64px 0 0 0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  h1 { font-size:132px; line-height:.86; letter-spacing:-.04em; font-weight:800; color:var(--thread); text-shadow:0 2px 0 rgba(0,0,0,.35), 0 -1px 0 rgba(255,255,255,.08); }
+  .eyebrow { font-size:13px; letter-spacing:.42em; margin-bottom:24px; color:var(--vegtan); }
+  .cta { margin-top:36px; background:var(--thread); color:var(--oxblood); padding:18px 34px; font-weight:700; font-size:16px; letter-spacing:.08em; border-radius:4px; }
+  .book { position:absolute; left:0; right:0; bottom:-120px; height:200px; display:flex; justify-content:center; gap:0; }
+  .book div { width:180px; height:200px; margin-left:-40px; border-radius:6px 6px 0 0; outline:2px dashed rgba(236,224,200,.4); outline-offset:-8px; }
+</style>
+</head>
+<body>
+  <div class="bar"><div class="logo">NOVA STERLING</div><div class="menu">Menu +</div></div>
+  <div class="swatch" style="left:120px;top:150px;background:var(--saddle);transform:rotate(-8deg)"><div class="tab" style="background:var(--saddle)"></div><div class="num">Nº 004 · TIMEPIECES</div></div>
+  <div class="swatch" style="left:1090px;top:130px;background:var(--bridle);transform:rotate(7deg)"><div class="tab" style="background:var(--bridle)"></div><div class="num">Nº 011 · LEATHER</div></div>
+  <div class="swatch" style="left:1150px;top:520px;width:150px;height:188px;background:var(--vegtan);transform:rotate(-5deg)"><div class="num" style="color:var(--bridle)">Nº 017</div></div>
+  <div class="swatch" style="left:200px;top:560px;width:140px;height:176px;background:#7c2a2f;transform:rotate(9deg)"><div class="num">Nº 022</div></div>
+  <div class="center">
+    <div class="eyebrow">NOVA STERLING LTD</div>
+    <h1>CRAFTED<br>TO LAST.</h1>
+    <div class="cta">Shop the collection</div>
+  </div>
+  <div class="book">
+    <div style="background:var(--saddle)"></div><div style="background:var(--bridle)"></div><div style="background:var(--vegtan)"></div><div style="background:#7c2a2f"></div><div style="background:var(--saddle)"></div><div style="background:var(--bridle)"></div>
+  </div>
+</body>
+</html>

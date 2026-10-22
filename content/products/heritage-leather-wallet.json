@@ -1,0 +1,12 @@
+{
+  "id": "heritage-leather-wallet",
+  "title": "Heritage Leather Wallet",
+  "price": 49.0,
+  "description": "A slim bi-fold wallet with a classic stitched finish.\n\n- Multiple card slots and a full-length bill compartment\n- Slim enough for a front pocket\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/heritage-leather-wallet-1.svg",
+    "/uploads/heritage-leather-wallet-2.svg",
+    "/uploads/heritage-leather-wallet-3.svg"
+  ],
+  "featured": true
+}

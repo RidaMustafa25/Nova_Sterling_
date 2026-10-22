@@ -1,0 +1,11 @@
+{
+  "id": "pulse-fitness-watch",
+  "title": "Pulse Fitness Watch",
+  "price": 89.99,
+  "description": "A lightweight smart watch for tracking your daily activity.\n\n- Step and activity tracking\n- Comfortable adjustable strap\n\n*Sample product - replace this text from the admin panel.*",
+  "images": [
+    "/uploads/pulse-fitness-watch-1.svg",
+    "/uploads/pulse-fitness-watch-2.svg"
+  ],
+  "featured": false
+}
